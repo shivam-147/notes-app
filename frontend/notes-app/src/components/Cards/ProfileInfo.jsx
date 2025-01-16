@@ -9,7 +9,7 @@ function ProfileInfo({ onLogout }) {
             </div>
             <div>
                 <p className="text-sm font-medium">John Doe</p>
-                <button className="text-sm text-slate-700 underline" onclick={onLogout}>Logout</button>
+                <button className="text-sm text-slate-700 underline" onClick={onLogout}>Logout</button>
             </div>
         </div>
     )
