@@ -4,14 +4,22 @@ import { useNavigate } from 'react-router-dom'
 import SearchBar from '../SearchBar/SearchBar';
 import { useState } from 'react';
 
-function Navbar() {
+function Navbar({ userInfo, onSearchNote, handleClearSearch }) {
 
     const [searchQuery, setSearchQuery] = useState("")
-    const handleSearch = () => { }
-    const onClearSearch = () => { setSearchQuery("") }
+    const handleSearch = () => {
+        if (searchQuery) {
+            onSearchNote(searchQuery)
+        }
+    }
+    const onClearSearch = () => {
+        setSearchQuery("")
+        handleClearSearch();
+    }
 
-    const navigate = useNavigate;
+    const navigate = useNavigate();
     const onLogout = () => {
+        localStorage.clear();
         navigate("/login");
     }
 
@@ -27,8 +35,10 @@ function Navbar() {
                     setSearchQuery(target.value)
                 }}
             />
+            {
+                localStorage.getItem("token") ? <ProfileInfo userInfo={userInfo} onLogout={onLogout} /> : ""
+            }
 
-            <ProfileInfo onLogout={onLogout} />
         </div>
     )
 }

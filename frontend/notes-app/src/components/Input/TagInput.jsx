@@ -9,7 +9,6 @@ function TagInput({ tags, setTags }) {
     }
 
     const addNewTag = () => {
-        console.log(tags)
         if (inputValue.trim() !== "") {
             setTags([...tags, inputValue.trim()]);
             setInputValue("");

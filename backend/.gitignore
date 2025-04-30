@@ -1,0 +1,26 @@
+*.env
+
+config.json 
+# No code was selected, and the provided file seems to be a directory listing. 
+# Assuming a new configuration file is needed, here's a basic example of a config.json file:
+
+{
+  "development": {
+    "port": 3000,
+    "database": {
+      "host": "localhost",
+      "username": "root",
+      "password": "password",
+      "name": "database"
+    }
+  },
+  "production": {
+    "port": 80,
+    "database": {
+      "host": "remote-host",
+      "username": "remote-username",
+      "password": "remote-password",
+      "name": "remote-database"
+    }
+  }
+}it
