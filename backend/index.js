@@ -4,7 +4,6 @@ const jwt = require("jsonwebtoken")
 //mongoose.connect(config.connectionString)
 
 mongoose.connect(process.env.CONFIG)
-console.log(process.env.CONFIG)
 
 const User = require("./models/user.model")
 const Note = require("./models/note.model")
