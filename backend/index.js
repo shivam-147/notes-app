@@ -1,9 +1,11 @@
 require("dotenv").config();
-const config = require("./config.json");
 const mongoose = require("mongoose");
 const jwt = require("jsonwebtoken")
 //mongoose.connect(config.connectionString)
+
 mongoose.connect(process.env.CONFIG)
+console.log(process.env.CONFIG)
+
 const User = require("./models/user.model")
 const Note = require("./models/note.model")
 
